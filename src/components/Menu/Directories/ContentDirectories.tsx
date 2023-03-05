@@ -38,7 +38,7 @@ const ContentDirectories: React.FC<{ classActive: string }> = ({
                     onClose={closeModalDirectoryHandler}
                     onConfirm={createNewDirectoryHandler}
                     btnText="Create"
-                    title="Create new directory"
+                    title="Create New Application"
                 />
             )}
 
@@ -47,12 +47,14 @@ const ContentDirectories: React.FC<{ classActive: string }> = ({
                     <ItemDirectory key={dir} classActive={classActive} dir={dir} />
                 ))}
             </ul>
-            <button
-                onClick={() => setModalDirIsShown(true)}
-                className="px-3 py-1 border-slate-300 dark:border-slate-700 border-2 ml-9 mt-2 rounded-md border-dashed hover:text-violet-500"
-            >
-                + New
-            </button>
+            <div className="flex justify-center ml-0 mr-9">
+                <button
+                    onClick={() => setModalDirIsShown(true)}
+                    className="px-3 py-1 border-slate-300 dark:border-slate-700 border-2 ml-9 mt-2 rounded-md border-dashed hover:text-violet-500"
+                >
+                    New University Application
+                </button>
+            </div>
         </>
     );
 };

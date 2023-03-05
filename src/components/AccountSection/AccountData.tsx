@@ -1,5 +1,4 @@
 import React from "react";
-import avatar1 from "../../assets/avatar-1.jpg";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { menusActions } from "../../store/Menu.store";
 import LayoutMenus from "../Utilities/LayoutMenus";
@@ -33,8 +32,10 @@ const AccountData: React.FC = () => {
                 <TasksDone />
                 <DeleteTasks />
                 <a
-                    href="https://github.com/https://github.com/HDSB-2023-Hackathon"
+                    href="https://github.com/HDSB-2023-Hackathon"
                     className="mt-4 bg-rose-100 p-2 rounded-md text-rose-600 text-center transition hover:bg-rose-200 dark:bg-slate-700/[.3] dark:text-slate-200"
+                    target="_blank"
+                    rel="noreferrer"
                 >
                     Made for the HDSB 2023 Hackathon
                 </a>

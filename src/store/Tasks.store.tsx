@@ -5,7 +5,7 @@ import {
     MiddlewareAPI,
     PayloadAction,
 } from "@reduxjs/toolkit";
-import { Task } from "../interfaces";
+import { Task, Grade } from "../interfaces";
 
 const defaultTasks: Task[] = [
     {
@@ -13,7 +13,7 @@ const defaultTasks: Task[] = [
         important: false,
         description: "This is the description for this task",
         date: "2023-04-12",
-        dir: "Main",
+        dir: "Grades",
         completed: true,
         id: "t1",
     },
@@ -22,7 +22,7 @@ const defaultTasks: Task[] = [
         important: true,
         description: "This is the description for this task",
         date: "2023-05-15",
-        dir: "Main",
+        dir: "Grades",
         completed: true,
         id: "t2",
     },
@@ -31,9 +31,48 @@ const defaultTasks: Task[] = [
         important: false,
         description: "This is the description for this task",
         date: "2023-08-21",
-        dir: "Main",
+        dir: "Grades",
         completed: false,
         id: "t3",
+    },
+];
+
+const defaultGrades: Grade[] = [
+    {
+        course: "English",
+        grade: 80,
+        completed: true,
+        id: "g1",
+    },
+    {
+        course: "Advanced Functions",
+        grade: 80,
+        completed: true,
+        id: "g1",
+    },
+    {
+        course: "Physics",
+        grade: 80,
+        completed: true,
+        id: "g1",
+    },
+    {
+        course: "Chemistry",
+        grade: 80,
+        completed: true,
+        id: "g1",
+    },
+    {
+        course: "Biology",
+        grade: 80,
+        completed: true,
+        id: "g1",
+    },
+    {
+        course: "French",
+        grade: 80,
+        completed: true,
+        id: "g1",
     },
 ];
 
@@ -41,12 +80,12 @@ const getSavedDirectories = (): string[] => {
     let dirList: string[] = [];
     if (localStorage.getItem("directories")) {
         dirList = JSON.parse(localStorage.getItem("directories")!);
-        const mainDirExists = dirList.some((dir: string) => dir === "Main");
-        if (!mainDirExists) {
-            dirList.push("Main");
+        const gradesExists = dirList.some((dir: string) => dir === "Grades");
+        if (!gradesExists) {
+            dirList.push("Grades");
         }
     } else {
-        dirList.push("Main");
+        dirList.push("Grades");
     }
 
     if (localStorage.getItem("tasks")) {
@@ -111,7 +150,7 @@ const tasksSlice = createSlice({
         },
         deleteAllData(state) {
             state.tasks = [];
-            state.directories = ["Main"];
+            state.directories = ["Grades"];
         },
         createDirectory(state, action: PayloadAction<string>) {
             const newDirectory: string = action.payload;
