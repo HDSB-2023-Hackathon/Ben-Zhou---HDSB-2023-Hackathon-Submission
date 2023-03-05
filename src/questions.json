@@ -1,0 +1,202 @@
+[
+    {
+        "id":1,
+        "question":"What inspired you to pursue higher education?"
+    },
+    {
+        "id":2,
+        "question":"What are your academic and career goals?"
+    },
+    {
+        "id":3,
+        "question":"What challenges have you faced in your academic or personal life, and how have you overcome them?"
+    },
+    {
+        "id":4,
+        "question":"What experiences have you had that have prepared you for university-level coursework?"
+    },
+    {
+        "id":5,
+        "question":"What do you hope to gain from your university education?"
+    },
+    {
+        "id":6,
+        "question":"What specific academic programs or majors are you interested in, and why?"
+    },
+    {
+        "id":7,
+        "question":"What extracurricular activities or clubs are you interested in, and why?"
+    },
+    {
+        "id":8,
+        "question":"What leadership experiences have you had, and how have they shaped you?"
+    },
+    {
+        "id":9,
+        "question":"What community service or volunteer work have you done, and how has it impacted you?"
+    },
+    {
+        "id":10,
+        "question":"What skills or talents do you possess that will contribute to the university community?"
+    },
+    {
+        "id":11,
+        "question":"What do you consider to be your greatest accomplishment, and why?"
+    },
+    {
+        "id":12,
+        "question":"What do you consider to be your greatest weakness, and how have you worked to improve it?"
+    },
+    {
+        "id":13,
+        "question":"What do you believe are the most important issues facing your generation, and how do you plan to address them?"
+    },
+    {
+        "id":14,
+        "question":"What is the biggest risk you have ever taken, and what did you learn from it?"
+    },
+    {
+        "id":15,
+        "question":"What do you think sets you apart from other applicants?"
+    },
+    {
+        "id":16,
+        "question":"What role do you believe diversity plays in the university community, and how do you plan to contribute to it?"
+    },
+    {
+        "id":17,
+        "question":"What experiences have you had with research, and how do you plan to continue that work at the university level?"
+    },
+    {
+        "id":18,
+        "question":"What do you believe are the most important qualities for a successful student, and how do you embody those qualities?"
+    },
+    {
+        "id":19,
+        "question":"What do you believe are the most important qualities for a successful leader, and how do you embody those qualities?"
+    },
+    {
+        "id":20,
+        "question":"What do you believe are the most important qualities for a successful team member, and how do you embody those qualities?"
+    },
+    {
+        "id":21,
+        "question":"What do you believe are the most important ethical considerations in your field of study, and how do you plan to navigate them?"
+    },
+    {
+        "id":22,
+        "question":"What do you believe are the most important global challenges, and how do you plan to address them?"
+    },
+    {
+        "id":23,
+        "question":"What experiences have you had that demonstrate your ability to adapt to new situations?"
+    },
+    {
+        "id":24,
+        "question":"What do you believe are the benefits and challenges of studying abroad, and how do you plan to address them?"
+    },
+    {
+        "id":25,
+        "question":"What do you believe are the most important skills for success in your chosen field, and how do you plan to develop those skills?"
+    },
+    {
+        "id":26,
+        "question":"What do you believe are the most pressing social issues in your community, and how do you plan to address them?"
+    },
+    {
+        "id":27,
+        "question":"What do you believe are the most pressing environmental issues, and how do you plan to address them?"
+    },
+    {
+        "id":28,
+        "question":"What experiences have you had that demonstrate your ability to work collaboratively with others?"
+    },
+    {
+        "id":29,
+        "question":"What do you believe are the most important qualities for success in your future career, and how do you plan to develop those qualities?"
+    },
+    {
+        "id":30,
+        "question":"What do you believe are the most important qualities for success in life, and how do you embody those qualities?"
+    },
+    {
+        "id":31,
+        "question":"What experiences have you had that demonstrate your commitment to serving others?"
+    },
+    {
+        "id":32,
+        "question":"What experiences have you had with leadership, and how have they influenced your goals and values?"
+    },
+    {
+        "id":33,
+        "question":"What do you believe are the most important qualities for a successful entrepreneur, and how do you embody those qualities?"
+    },
+    {
+        "id":34,
+        "question":"What experiences have you had with innovation or entrepreneurship, and how do you plan to continue that work at the university level?"
+    },
+    {
+        "id":35,
+        "question":"What do you believe are the most important qualities for success in a rapidly changing world, and how do you embody those qualities?"
+    },
+    {
+        "id":36,
+        "question":"What experiences have you had that demonstrate your ability to overcome adversity?"
+    },
+    {
+        "id":37,
+        "question":"What do you believe are the most important ethical considerations in the workplace, and how do you plan to navigate them?"
+    },
+    {
+        "id":38,
+        "question":"What do you believe are the most important considerations in building a successful team, and how do you plan to contribute to that process?"
+    },
+    {
+        "id":39,
+        "question":"What do you believe are the most important considerations in building a successful organization, and how do you plan to contribute to that process?"
+    },
+    {
+        "id":40,
+        "question":"What experiences have you had with community service or volunteer work, and how do you plan to continue that work at the university level?"
+    },
+    {
+        "id":41,
+        "question":"What experiences have you had with advocacy or activism, and how do you plan to continue that work at the university level?"
+    },
+    {
+        "id": 42,
+        "question": "What do you believe are the most important considerations in building a successful career, and how do you plan to develop those skills?"
+    },
+    {
+        "id": 43,
+        "question": "What experiences have you had that demonstrate your creativity or artistic ability?"
+    },
+    {
+        "id": 44,
+        "question": "What do you believe are the most important qualities for success in the arts, and how do you embody those qualities?"
+    },
+    {
+        "id": 45,
+        "question": "What do you believe are the most important considerations in building a successful brand or business, and how do you plan to contribute to that process?"
+    },
+    {
+        "id": 46,
+        "question": "What experiences have you had that demonstrate your ability to think critically or solve complex problems?"
+    },
+    {
+        "id": 47,
+        "question": "What do you believe are the most important qualities for success in scientific research, and how do you embody those qualities?"
+    },
+    {
+        "id": 48,
+        "question": "What do you believe are the most important considerations in building a successful scientific research program, and how do you plan to contribute to that process?"
+    },
+    {
+        "id": 49,
+        "question": "What experiences have you had that demonstrate your commitment to diversity and inclusion?"
+    },
+    {
+        "id": 50,
+        "question": "What do you believe are the most important considerations in building a diverse and inclusive community, and how do you plan to contribute to that process?"
+    }
+]
