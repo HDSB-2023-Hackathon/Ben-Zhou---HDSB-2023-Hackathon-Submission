@@ -27,6 +27,7 @@ const Menu: React.FC = () => {
                     UniPlanner
                 </h1>
                 <BtnAddTask className="my-8 mx-4" />
+                <hr className="rounded"></hr>
                 <Directories classActive={classLinkActive} />
             </header>
         </LayoutMenus>
