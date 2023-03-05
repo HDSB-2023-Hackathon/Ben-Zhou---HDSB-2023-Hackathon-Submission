@@ -10,9 +10,9 @@ March 3rd 2023 Project Start!
 
 ## What?
 
-Often times, after high school, students attend a post secondary institution, often a university to further their education. However, the process of applying to these universities can be very stressful and time consuming, students only really are given the tools necessary to start planning near the start of grade 12 through OUAC. This is where UniPlanner comes in. UniPlanner is a web application that allows students to keep track of their university applications and sample questions that they might be asked during the application process. They can also keep track of their grades and other important information that they might need to know or any special notes about that certain university. Students may also mark a certain "Note" as I've named them, important which gives them a little star next to the note.
+Often times, after high school, students attend a post secondary institution, often a university to further their education. However, the process of applying to these universities can be very stressful and time consuming, students only really are given the tools necessary to start planning near the start of grade 12 through OUAC. This is where UniPlanner comes in. UniPlanner is a web application that allows students to keep track of their university applications and sample questions that they might be asked during the application process. They can also keep track of their grades and other important information that they might need to know or any special notes about that certain university. Students may also mark a certain "Cards" as I've named them, important which gives them a little star next to the card.
 
-In addition there are many small QOL features for this app, you can colour notes, change the view, do everything in dark mode and create applications for many universities.
+In addition there are many small QOL features for this app, you can colour cards, change the view, do everything in dark mode and create applications for many universities.
 
 You can test out the app [here](https://ben-hdsbhacks.netlify.app/).
 
