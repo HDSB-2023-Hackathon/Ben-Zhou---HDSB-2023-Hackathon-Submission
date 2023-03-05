@@ -81,7 +81,7 @@ const ModalCreateCard: React.FC<{
 
     const [selectedColor, setSelectedColor] = useState<string>(() => {
         if (card) {
-            return card.color !== "gray" ? `bg-${card.color}-300` : "bg-grey-500";
+            return card.color;
         }
         return "bg-black";
     });
@@ -192,26 +192,26 @@ const ModalCreateCard: React.FC<{
                         value={selectedColor}
                         onChange={({ target }) => setSelectedColor(target.value)}
                     >
-                        <option value="red" className="text-rose-500">
+                        <option value="bg-red-500" className="text-rose-500">
                             Red
                         </option>
-                        <option value="blue" className="text-blue-500">
+                        <option value="bg-blue-500" className="text-blue-500">
                             Blue
                         </option>
-                        <option value="green" className="text-green-500">
+                        <option value="bg-green-500" className="text-green-500">
                             Green
                         </option>
-                        <option value="yellow" className="text-yellow-500">
+                        <option value="bg-yellow-500" className="text-yellow-500">
                             Yellow
                         </option>
-                        <option value="purple" className="text-purple-500">
+                        <option value="bg-purple-500" className="text-purple-500">
                             Purple
                         </option>
-                        <option value="pink" className="text-pink-500">
+                        <option value="bg-pink-500" className="text-pink-500">
                             Pink
                         </option>
-                        <option value="gray" className="text-slate-300">
-                            Gray
+                        <option value="bg-black" className="text-black">
+                            Black
                         </option>
                     </select>
                 </label>

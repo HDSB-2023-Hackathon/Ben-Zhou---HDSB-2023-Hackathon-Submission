@@ -13,7 +13,7 @@ const InfosCard: React.FC<{ card: Card; isListInView1: boolean }> = ({
                     isListInView1 ? "mb-1" : "mb-2"
                 }`}
             >
-                <span className={`block font-medium break-normal ${card.color} text-slate-100`}>
+                <span className={`text-slate-100 block font-medium break-normal "`}>
                     {card.title}
                 </span>
             </div>
