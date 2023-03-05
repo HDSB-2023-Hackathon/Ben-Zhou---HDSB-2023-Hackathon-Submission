@@ -4,9 +4,9 @@ import modalReducer from "./Modal.store";
 import menuReducer from "./Menu.store";
 
 const store = configureStore({
-  reducer: { tasks: tasksReducer, modal: modalReducer, menu: menuReducer },
-  middleware: (getDefaultMiddleware: any) =>
-    getDefaultMiddleware().concat(tasksMiddleware),
+    reducer: { tasks: tasksReducer, modal: modalReducer, menu: menuReducer },
+    middleware: (getDefaultMiddleware: any) =>
+        getDefaultMiddleware().concat(tasksMiddleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

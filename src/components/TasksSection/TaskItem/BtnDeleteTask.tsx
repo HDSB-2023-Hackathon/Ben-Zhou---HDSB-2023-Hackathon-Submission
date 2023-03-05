@@ -25,7 +25,7 @@ const BtnDeleteTask: React.FC<{ taskId: string }> = ({ taskId }) => {
         title="delete task"
         className="ml-2 transition hover:text-slate-700 dark:hover:text-slate-200"
       >
-        <Trash className="w-5 h-5 sm:w-6 sm:h-6" />
+        <Trash className="w-5 h-5 sm:w-6 sm:h-6 fill-rose-500" />
       </button>
     </>
   );

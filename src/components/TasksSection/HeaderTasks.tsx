@@ -2,7 +2,6 @@ import React from "react";
 import BtnAddTask from "../Utilities/BtnAddTask";
 import { ReactComponent as MenuIcon } from "../../assets/menu.svg";
 import avatar1 from "../../assets/avatar-1.jpg";
-import SearchField from "./SearchField";
 import { useAppDispatch } from "../../store/hooks";
 import { menusActions } from "../../store/Menu.store";
 import Notification from "./Notification";
@@ -54,7 +53,6 @@ const HeaderTasks: React.FC = () => {
             >
                 <MenuIcon />
             </button>
-            <SearchField />
             <div className="text-center">
                 <span className="text-slate-600 dark:text-slate-200 uppercase font-bold text-sm block">
                     UniPlanner

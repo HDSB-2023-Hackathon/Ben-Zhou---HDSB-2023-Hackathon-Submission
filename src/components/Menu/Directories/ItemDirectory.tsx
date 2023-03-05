@@ -76,10 +76,10 @@ const ItemDirectory: React.FC<{ dir: string; classActive: string }> = ({
                             <Edit className="w-5 h-5 mr-2" />
                         </button>
                         <button
-                            title="delete university"
+                            title="Delete"
                             onClick={() => setModalIsShown(true)}
                         >
-                            <Trash className="w-5 h-5" />
+                            <Trash className="w-5 h-5 fill-rose-500" />
                         </button>
                     </div>
                 )}
