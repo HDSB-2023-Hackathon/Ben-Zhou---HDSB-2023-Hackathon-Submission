@@ -4,7 +4,6 @@ import { menusActions } from "../../store/Menu.store";
 import LayoutMenus from "../Utilities/LayoutMenus";
 import DarkMode from "./DarkMode";
 import DeleteCards from "./DeleteCards";
-import CardsDone from "./CardsDone";
 import { RootState } from "../../store";
 
 const AccountData: React.FC = () => {
@@ -29,7 +28,6 @@ const AccountData: React.FC = () => {
 
                 <DarkMode />
 
-                <CardsDone />
                 <DeleteCards />
                 <a
                     href="https://github.com/HDSB-2023-Hackathon"
