@@ -2,7 +2,9 @@
 
 Ben's 2023 Hackathon Submission
 
-# UniPlanner 
+# UniPlanner
+
+![Image](https://i.imgur.com/Zd3q5iW.png)
 
 March 3rd 2023 Project Start!
 
