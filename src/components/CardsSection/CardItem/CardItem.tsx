@@ -12,11 +12,11 @@ const CardItem: React.FC<{ isListInView1: boolean; card: Card }> = ({
     <>
       <li key={card.id}>
         <Link
-          to={`/application/${card.dir}`}
-          title={card.dir}
+          to={`/application/${card.app}`}
+          title={card.app}
           className="ml-auto mr-4 w-min whitespace-nowrap overflow-hidden max-w-[10rem] text-center text-ellipsis bg-rose-200 text-rose-600 px-4 py-1 rounded-t-md transition dark:bg-slate-700 dark:text-slate-200 block hover:bg-rose-300 dark:hover:bg-rose-500"
         >
-          {card.dir}
+          {card.app}
         </Link>
         <article
           className={`bg-slate-100 rounded-lg p-3 sm:p-4 flex text-left transition hover:shadow-lg hover:shadow-slate-300 dark:bg-slate-800 dark:hover:shadow-transparent ${

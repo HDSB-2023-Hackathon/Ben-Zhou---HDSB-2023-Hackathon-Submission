@@ -12,8 +12,8 @@ const Application: React.FC = () => {
     const navigate = useNavigate();
 
     useDescriptionTitle(
-        `Cards in "${params.dir}"`,
-        params.dir ? params.dir + " application" : ""
+        `Cards in "${params.app}"`,
+        params.app ? params.app + " application" : ""
     );
 
     const [cardsInCurrentApplication, setCardsInCurrentApplication] = useState<
@@ -21,17 +21,17 @@ const Application: React.FC = () => {
     >([]);
 
     useEffect(() => {
-        const dirExists = params.dir ? applications.includes(params.dir ? params.dir : "") : false;
-        if (!dirExists) {
+        const appExists = params.app ? applications.includes(params.app ? params.app : "") : false;
+        if (!appExists) {
             navigate("/");
         }
-        const cardsFiltered = cards.filter((card: Card) => card.dir === params.dir);
+        const cardsFiltered = cards.filter((card: Card) => card.app === params.app);
         setCardsInCurrentApplication(cardsFiltered);
-    }, [applications, navigate, params.dir, cards]);
+    }, [applications, navigate, params.app, cards]);
 
     return (
         <LayoutRoutes
-            title={params.dir !== `Grades` ? `${params.dir}'s Application` : `Grades`}
+            title={params.app !== `Grades` ? `${params.app}'s Application` : `Grades`}
             cards={cardsInCurrentApplication}
         />
     );

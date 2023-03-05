@@ -1,6 +1,6 @@
 export interface Card {
     title: string;
-    dir: string;
+    app: string;
     description: string;
     completed: boolean;
     important: boolean;

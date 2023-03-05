@@ -12,7 +12,7 @@ const defaultCards: Card[] = [
         title: "Card 1",
         important: false,
         description: "This is the description for this card",
-        dir: "Grades",
+        app: "Grades",
         completed: true,
         id: "t1",
     },
@@ -20,7 +20,7 @@ const defaultCards: Card[] = [
         title: "Card 2",
         important: true,
         description: "This is the description for this card",
-        dir: "Grades",
+        app: "Grades",
         completed: true,
         id: "t2",
     },
@@ -28,7 +28,7 @@ const defaultCards: Card[] = [
         title: "Card 3",
         important: false,
         description: "This is the description for this card",
-        dir: "Grades",
+        app: "Grades",
         completed: false,
         id: "t3",
     },
@@ -74,30 +74,30 @@ const defaultGrades: Grade[] = [
 ];
 
 const getSavedApplications = (): string[] => {
-    let dirList: string[] = [];
+    let appList: string[] = [];
     if (localStorage.getItem("applications")) {
-        dirList = JSON.parse(localStorage.getItem("applications")!);
-        const gradesExists = dirList.some((dir: string) => dir === "Grades");
+        appList = JSON.parse(localStorage.getItem("applications")!);
+        const gradesExists = appList.some((app: string) => app === "Grades");
         if (!gradesExists) {
-            dirList.push("Grades");
+            appList.push("Grades");
         }
     } else {
-        dirList.push("Grades");
+        appList.push("Grades");
     }
 
     if (localStorage.getItem("cards")) {
         const savedCardsList = JSON.parse(localStorage.getItem("cards")!);
-        let dirNotSaved: string[] = [];
+        let appNotSaved: string[] = [];
         savedCardsList.forEach((card: Card) => {
-            if (!dirList.includes(card.dir)) {
-                if (!dirNotSaved.includes(card.dir)) {
-                    dirNotSaved.push(card.dir);
+            if (!appList.includes(card.app)) {
+                if (!appNotSaved.includes(card.app)) {
+                    appNotSaved.push(card.app);
                 }
             }
         });
-        dirList = [...dirList, ...dirNotSaved];
+        appList = [...appList, ...appNotSaved];
     }
-    return dirList;
+    return appList;
 };
 
 const initialState: {
@@ -156,10 +156,10 @@ const cardsSlice = createSlice({
             state.applications = [newApplication, ...state.applications];
         },
         deleteApplication(state, action: PayloadAction<string>) {
-            const dirName = action.payload;
+            const appName = action.payload;
 
-            state.applications = state.applications.filter((dir) => dir !== dirName);
-            state.cards = state.cards.filter((card) => card.dir !== dirName);
+            state.applications = state.applications.filter((app) => app !== appName);
+            state.cards = state.cards.filter((card) => card.app !== appName);
         },
         editApplicationName(
             state,
@@ -170,12 +170,12 @@ const cardsSlice = createSlice({
             const applicationAlreadyExists = state.applications.includes(newDirName);
             if (applicationAlreadyExists) return;
 
-            const dirIndex = state.applications.indexOf(previousDirName);
+            const appIndex = state.applications.indexOf(previousDirName);
 
-            state.applications[dirIndex] = newDirName;
+            state.applications[appIndex] = newDirName;
             state.cards.forEach((card) => {
-                if (card.dir === previousDirName) {
-                    card.dir = newDirName;
+                if (card.app === previousDirName) {
+                    card.app = newDirName;
                 }
             });
         },
@@ -200,8 +200,8 @@ export const cardsMiddleware =
             localStorage.setItem("cards", JSON.stringify(cardsList));
         }
         if (action.type.startsWith("cards/") && isAApplicationAction) {
-            const dirList = store.getState().cards.applications;
-            localStorage.setItem("applications", JSON.stringify(dirList));
+            const appList = store.getState().cards.applications;
+            localStorage.setItem("applications", JSON.stringify(appList));
         }
 
         if (cardsActions.deleteAllData.match(action)) {

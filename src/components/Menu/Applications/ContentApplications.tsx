@@ -19,7 +19,7 @@ const ContentApplications: React.FC<{ classActive: string }> = ({
         if (newApplicationName.length === 0) return;
 
         const applicationDoesNotExist = applications.every(
-            (dir: string) => dir !== newApplicationName
+            (app: string) => app !== newApplicationName
         );
 
         if (applicationDoesNotExist) {
@@ -43,8 +43,8 @@ const ContentApplications: React.FC<{ classActive: string }> = ({
             )}
 
             <ul className="max-h-36 overflow-auto">
-                {applications.map((dir: string) => (
-                    <ItemApplication key={dir} classActive={classActive} dir={dir} />
+                {applications.map((app: string) => (
+                    <ItemApplication key={app} classActive={classActive} app={app} />
                 ))}
             </ul>
             <div className="flex justify-center ml-0 mr-9">

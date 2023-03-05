@@ -7,8 +7,8 @@ import { ReactComponent as Edit } from "../../../assets/edit.svg";
 import ModalConfirm from "../../Utilities/ModalConfirm";
 import ModalApplication from "../../Utilities/ModalApplication";
 
-const ItemApplication: React.FC<{ dir: string; classActive: string }> = ({
-    dir,
+const ItemApplication: React.FC<{ app: string; classActive: string }> = ({
+    app,
     classActive,
 }) => {
     const route = useLocation();
@@ -24,14 +24,14 @@ const ItemApplication: React.FC<{ dir: string; classActive: string }> = ({
     };
 
     const deleteApplicationHandler = () => {
-        dispatch(cardsActions.deleteApplication(dir));
+        dispatch(cardsActions.deleteApplication(app));
     };
 
-    const confirmEditDirNameHandler = (dirName: string) => {
+    const confirmEditDirNameHandler = (appName: string) => {
         dispatch(
             cardsActions.editApplicationName({
-                previousDirName: dir,
-                newDirName: dirName,
+                previousDirName: app,
+                newDirName: appName,
             })
         );
     };
@@ -42,7 +42,7 @@ const ItemApplication: React.FC<{ dir: string; classActive: string }> = ({
                 <ModalApplication
                     onClose={closeModalApplicationHandler}
                     onConfirm={confirmEditDirNameHandler}
-                    dirName={dir}
+                    appName={app}
                     title="Edit University"
                     btnText="Edit"
                 />
@@ -56,18 +56,18 @@ const ItemApplication: React.FC<{ dir: string; classActive: string }> = ({
             )}
             <li
                 className={`flex items-center pr-4 pl-9 py-2 itemApplication ${
-                    currentPath === "/application/" + dir ? classActive : ""
+                    currentPath === "/application/" + app ? classActive : ""
                 }`}
             >
                 <NavLink
-                    to={`/application/${dir}`}
-                    title={dir}
+                    to={`/application/${app}`}
+                    title={app}
                     className="hover:text-rose-600 dark:hover:text-slate-200 transition text-ellipsis whitespace-nowrap overflow-hidden max-w-[18rem]"
                 >
-                    {dir}
+                    {app}
                 </NavLink>
 
-                {dir !== "Grades" && (
+                {app !== "Grades" && (
                     <div className="ml-auto buttonsDir">
                         <button
                             title="edit university name"

@@ -5,22 +5,22 @@ import Unis from "./unis.json";
 
 const ModalApplication: React.FC<{
     onClose: () => void;
-    dirName?: string;
+    appName?: string;
     onConfirm: (newDirName: string) => void;
     btnText: string;
     title: string;
-}> = ({ onClose, dirName, onConfirm, btnText, title }) => {
+}> = ({ onClose, appName, onConfirm, btnText, title }) => {
     const applications = useAppSelector((store) => store.cards.applications);
 
     const [errorApplicationName, setErrorApplicationName] = useState<boolean>(false);
-    const [newDirName, setNewDirName] = useState<string>(dirName ? dirName : "");
+    const [newDirName, setNewDirName] = useState<string>(appName ? appName : "");
 
     const checkDirNameExists = (val: string) => {
         const applicationDoesNotExist = applications.every(
-            (dir: string) => dir !== val
+            (app: string) => app !== val
         );
 
-        if (applicationDoesNotExist || dirName === val) {
+        if (applicationDoesNotExist || appName === val) {
             setErrorApplicationName(false);
         } else {
             setErrorApplicationName(true);
@@ -38,12 +38,12 @@ const ModalApplication: React.FC<{
         <Modal onClose={onClose} title={title}>
             <form className="stylesInputsField">
                 <div className="relative">
-                    <label htmlFor="dir-name" className="">
+                    <label htmlFor="app-name" className="">
                         Title
                     </label>
                     <input
                         type="text"
-                        id="dir-name"
+                        id="app-name"
                         placeholder="Enter a University Name"
                         value={newDirName}
                         onChange={({ target }) => setNewDirName(target.value)}
@@ -56,7 +56,7 @@ const ModalApplication: React.FC<{
                         className="inputStyles block w-full"
                         onChange={({ target }) => setNewDirName(target.value)}
                     >
-                        <option value="Select a University">Or Select a University</option>
+                        <option value="Select an University">Or Select a University</option>
                         {Unis.map((uni) => (
                             <option value={uni.name}>{uni.name}</option>
                         ))}

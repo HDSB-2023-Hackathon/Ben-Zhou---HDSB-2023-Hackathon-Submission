@@ -12,7 +12,7 @@ const CardsSection: React.FC = () => {
       <HeaderCards />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/application/:dir" element={<Application />} />
+        <Route path="/application/:app" element={<Application />} />
         <Route path="/card/:cardId" element={<CardOnly />} />
         <Route path="*" element={<Navigate to="" />} />
       </Routes>

@@ -28,7 +28,7 @@ const App: React.FC = () => {
             {modal.modalCreateCardOpen && (
                 <ModalCreateCard
                     onClose={closeModalCreateCard}
-                    nameForm="Add a card"
+                    nameForm="Add Card"
                     onConfirm={createNewCardHandler}
                 />
             )}

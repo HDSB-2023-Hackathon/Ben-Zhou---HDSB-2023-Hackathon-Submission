@@ -58,7 +58,6 @@ const ModalCreateCard: React.FC<{
         return "";
     });
     const isTitleValid = useRef<Boolean>(false);
-    const isDateValid = useRef<Boolean>(false);
 
     const [isImportant, setIsImportant] = useState<boolean>(() => {
         if (card) {
@@ -76,7 +75,7 @@ const ModalCreateCard: React.FC<{
 
     const [selectedApplication, setSelectedApplication] = useState<string>(() => {
         if (card) {
-            return card.dir;
+            return card.app;
         }
         return applications[0];
     });
@@ -86,10 +85,10 @@ const ModalCreateCard: React.FC<{
 
         isTitleValid.current = title.trim().length > 0;
 
-        if (isTitleValid.current && isDateValid.current) {
+        if (isTitleValid.current) {
             const newCard: Card = {
                 title: title,
-                dir: selectedApplication,
+                app: selectedApplication,
                 description: description,
                 completed: isCompleted,
                 important: isImportant,
@@ -105,6 +104,23 @@ const ModalCreateCard: React.FC<{
                 className="flex flex-col stylesInputsField"
                 onSubmit={addNewCardHandler}
             >
+                {/* <label>
+                    Card Type
+                    <select className="block w-full">
+                        <option value="grades" className="bg-slate-100 dark:bg-slate-800">
+                            Grade
+                        </option>
+                        <option value="applicationQuestion" className="bg-slate-100 dark:bg-slate-800">
+                            Application Question
+                        </option>
+                        <option value="extraCurricular" className="bg-slate-100 dark:bg-slate-800">
+                            Extra Curricular
+                        </option>
+                        <option value="other" className="bg-slate-100 dark:bg-slate-800">
+                            Other
+                        </option>
+                    </select>
+                </label> */}
                 <label>
                     Title
                     <input
@@ -126,19 +142,19 @@ const ModalCreateCard: React.FC<{
                     ></textarea>
                 </label>
                 <label>
-                    Select a application
+                    Select an Application
                     <select
                         className="block w-full"
                         value={selectedApplication}
                         onChange={({ target }) => setSelectedApplication(target.value)}
                     >
-                        {applications.map((dir: string) => (
+                        {applications.map((app: string) => (
                             <option
-                                key={dir}
-                                value={dir}
+                                key={app}
+                                value={app}
                                 className="bg-slate-100 dark:bg-slate-800"
                             >
-                                {dir}
+                                {app}
                             </option>
                         ))}
                     </select>
@@ -146,12 +162,12 @@ const ModalCreateCard: React.FC<{
                 <InputCheckbox
                     isChecked={isImportant}
                     setChecked={setIsImportant}
-                    label="Mark as important"
+                    label="Mark as Important"
                 />
                 <InputCheckbox
                     isChecked={isCompleted}
                     setChecked={setIsCompleted}
-                    label="Mark as completed"
+                    label="Mark as Completed"
                 />
                 <button type="submit" className="btn mt-5">
                     {nameForm}
