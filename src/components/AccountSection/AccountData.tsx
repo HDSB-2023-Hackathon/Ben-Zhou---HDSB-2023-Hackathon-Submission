@@ -3,8 +3,8 @@ import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { menusActions } from "../../store/Menu.store";
 import LayoutMenus from "../Utilities/LayoutMenus";
 import DarkMode from "./DarkMode";
-import DeleteTasks from "./DeleteTasks";
-import TasksDone from "./TasksDone";
+import DeleteCards from "./DeleteCards";
+import CardsDone from "./CardsDone";
 import { RootState } from "../../store";
 
 const AccountData: React.FC = () => {
@@ -29,8 +29,8 @@ const AccountData: React.FC = () => {
 
                 <DarkMode />
 
-                <TasksDone />
-                <DeleteTasks />
+                <CardsDone />
+                <DeleteCards />
                 <a
                     href="https://github.com/HDSB-2023-Hackathon"
                     className="mt-4 bg-rose-100 p-2 rounded-md text-rose-600 text-center transition hover:bg-rose-200 dark:bg-slate-700/[.3] dark:text-slate-200"

@@ -1,35 +1,35 @@
 import React, { useState } from "react";
 import { useAppSelector } from "../../store/hooks";
 import Modal from "./Modal";
-import Unis from "../Utilities/unis.json";
+import Unis from "./unis.json";
 
-const ModalDirectory: React.FC<{
+const ModalApplication: React.FC<{
     onClose: () => void;
     dirName?: string;
     onConfirm: (newDirName: string) => void;
     btnText: string;
     title: string;
 }> = ({ onClose, dirName, onConfirm, btnText, title }) => {
-    const directories = useAppSelector((store) => store.tasks.directories);
+    const applications = useAppSelector((store) => store.cards.applications);
 
-    const [errorDirectoryName, setErrorDirectoryName] = useState<boolean>(false);
+    const [errorApplicationName, setErrorApplicationName] = useState<boolean>(false);
     const [newDirName, setNewDirName] = useState<string>(dirName ? dirName : "");
 
     const checkDirNameExists = (val: string) => {
-        const directoryDoesNotExist = directories.every(
+        const applicationDoesNotExist = applications.every(
             (dir: string) => dir !== val
         );
 
-        if (directoryDoesNotExist || dirName === val) {
-            setErrorDirectoryName(false);
+        if (applicationDoesNotExist || dirName === val) {
+            setErrorApplicationName(false);
         } else {
-            setErrorDirectoryName(true);
+            setErrorApplicationName(true);
         }
     };
 
     const confirmDirNameHandler = (e: React.MouseEvent) => {
         e.preventDefault();
-        if (errorDirectoryName) return;
+        if (errorApplicationName) return;
         onConfirm(newDirName);
         onClose();
     };
@@ -61,9 +61,9 @@ const ModalDirectory: React.FC<{
                             <option value={uni.name}>{uni.name}</option>
                         ))}
                     </select>
-                    {errorDirectoryName && (
+                    {errorApplicationName && (
                         <div className="absolute bg-rose-500 text-slate-200 rounded-md p-2 top-full text-sm w-full font-medium z-20">
-                            Directory name already exists
+                            Application name already exists
                         </div>
                     )}
                 </div>
@@ -75,4 +75,4 @@ const ModalDirectory: React.FC<{
     );
 };
 
-export default ModalDirectory;
+export default ModalApplication;

@@ -16,13 +16,13 @@
 
 
 @layer components {
-	.tasksList > li:first-of-type article {
+	.cardsList > li:first-of-type article {
 		@apply bg-violet-600 text-slate-100 dark:bg-violet-800;
 	}
-	.tasksList > li:first-of-type article .description {
+	.cardsList > li:first-of-type article .description {
 		@apply text-violet-300;
 	}
-	.tasksList > li:first-of-type article > div {
+	.cardsList > li:first-of-type article > div {
 		@apply border-violet-500 dark:border-violet-700;
 	}
 	.listView1 article {
@@ -57,10 +57,10 @@
 	.barProgress > div {
 		@apply bg-violet-600 h-full;
 	}
-	.itemDirectory > .buttonsDir {
+	.itemApplication > .buttonsDir {
 		@apply xl:opacity-0 transition opacity-100;
 	}
-	.itemDirectory:hover > .buttonsDir {
+	.itemApplication:hover > .buttonsDir {
 		@apply opacity-100;
 	}
 }

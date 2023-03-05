@@ -14,9 +14,9 @@ March 3rd 2023 Project Start!
 
 ### Day 1
 
-I've decided to use https://github.com/aridsm/tasks-app as a base for my project.
+I've decided to use https://github.com/aridsm/cards-app as a base for my project.
 
-It has most of the components I need and I will be editing the tasks to suit my needs.
+It has most of the components I need and I will be editing the cards to suit my needs.
 
 ### Day 2
 

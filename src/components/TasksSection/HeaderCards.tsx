@@ -1,12 +1,12 @@
 import React from "react";
-import BtnAddTask from "../Utilities/BtnAddTask";
+import BtnAddCard from "../Utilities/BtnAddCard";
 import { ReactComponent as MenuIcon } from "../../assets/menu.svg";
 import avatar1 from "../../assets/avatar-1.jpg";
 import { useAppDispatch } from "../../store/hooks";
 import { menusActions } from "../../store/Menu.store";
 import Notification from "./Notification";
 
-const HeaderTasks: React.FC = () => {
+const HeaderCards: React.FC = () => {
     const dispatch = useAppDispatch();
 
     const date: Date = new Date();
@@ -61,7 +61,7 @@ const HeaderTasks: React.FC = () => {
             </div>
             <div className="flex flex-1">
                 <Notification />
-                <BtnAddTask className="sm:static fixed bottom-3 right-3 z-10 sm:z-0 min-w-max shadow-lg shadow-slate-400  dark:shadow-slate-900 sm:shadow-transparent" />
+                <BtnAddCard className="sm:static fixed bottom-3 right-3 z-10 sm:z-0 min-w-max shadow-lg shadow-slate-400  dark:shadow-slate-900 sm:shadow-transparent" />
 
                 <button onClick={openMenuAccountHandler} className="block xl:hidden">
                     <img
@@ -75,4 +75,4 @@ const HeaderTasks: React.FC = () => {
     );
 };
 
-export default HeaderTasks;
+export default HeaderCards;

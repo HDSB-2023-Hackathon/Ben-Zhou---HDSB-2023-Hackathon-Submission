@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Task } from "../../interfaces";
+import { Card } from "../../interfaces";
 import { useAppSelector } from "../../store/hooks";
 import Modal from "./Modal";
 
@@ -26,13 +26,13 @@ const InputCheckbox: React.FC<{
   );
 };
 
-const ModalCreateTask: React.FC<{
+const ModalCreateCard: React.FC<{
   onClose: () => void;
-  task?: Task;
+  card?: Card;
   nameForm: string;
-  onConfirm: (task: Task) => void;
-}> = ({ onClose, task, nameForm, onConfirm }) => {
-  const directories = useAppSelector((state) => state.tasks.directories);
+  onConfirm: (card: Card) => void;
+}> = ({ onClose, card, nameForm, onConfirm }) => {
+  const applications = useAppSelector((state) => state.cards.applications);
 
   const today: Date = new Date();
   let day: number = today.getDate();
@@ -49,20 +49,20 @@ const ModalCreateTask: React.FC<{
   const maxDate: string = year + 1 + "-" + month + "-" + day;
 
   const [description, setDescription] = useState<string>(() => {
-    if (task) {
-      return task.description;
+    if (card) {
+      return card.description;
     }
     return "";
   });
   const [title, setTitle] = useState<string>(() => {
-    if (task) {
-      return task.title;
+    if (card) {
+      return card.title;
     }
     return "";
   });
   const [date, setDate] = useState<string>(() => {
-    if (task) {
-      return task.date;
+    if (card) {
+      return card.date;
     }
     return todayDate;
   });
@@ -70,43 +70,43 @@ const ModalCreateTask: React.FC<{
   const isDateValid = useRef<Boolean>(false);
 
   const [isImportant, setIsImportant] = useState<boolean>(() => {
-    if (task) {
-      return task.important;
+    if (card) {
+      return card.important;
     }
     return false;
   });
 
   const [isCompleted, setIsCompleted] = useState<boolean>(() => {
-    if (task) {
-      return task.completed;
+    if (card) {
+      return card.completed;
     }
     return false;
   });
 
-  const [selectedDirectory, setSelectedDirectory] = useState<string>(() => {
-    if (task) {
-      return task.dir;
+  const [selectedApplication, setSelectedApplication] = useState<string>(() => {
+    if (card) {
+      return card.dir;
     }
-    return directories[0];
+    return applications[0];
   });
 
-  const addNewTaskHandler = (event: React.FormEvent): void => {
+  const addNewCardHandler = (event: React.FormEvent): void => {
     event.preventDefault();
 
     isTitleValid.current = title.trim().length > 0;
     isDateValid.current = date.trim().length > 0;
 
     if (isTitleValid.current && isDateValid.current) {
-      const newTask: Task = {
+      const newCard: Card = {
         title: title,
-        dir: selectedDirectory,
+        dir: selectedApplication,
         description: description,
         date: date,
         completed: isCompleted,
         important: isImportant,
-        id: task?.id ? task.id : Date.now().toString(),
+        id: card?.id ? card.id : Date.now().toString(),
       };
-      onConfirm(newTask);
+      onConfirm(newCard);
       onClose();
     }
   };
@@ -114,7 +114,7 @@ const ModalCreateTask: React.FC<{
     <Modal onClose={onClose} title={nameForm}>
       <form
         className="flex flex-col stylesInputsField"
-        onSubmit={addNewTaskHandler}
+        onSubmit={addNewCardHandler}
       >
         <label>
           Title
@@ -149,13 +149,13 @@ const ModalCreateTask: React.FC<{
           ></textarea>
         </label>
         <label>
-          Select a directory
+          Select a application
           <select
             className="block w-full"
-            value={selectedDirectory}
-            onChange={({ target }) => setSelectedDirectory(target.value)}
+            value={selectedApplication}
+            onChange={({ target }) => setSelectedApplication(target.value)}
           >
-            {directories.map((dir: string) => (
+            {applications.map((dir: string) => (
               <option
                 key={dir}
                 value={dir}
@@ -184,4 +184,4 @@ const ModalCreateTask: React.FC<{
   );
 };
 
-export default ModalCreateTask;
+export default ModalCreateCard;

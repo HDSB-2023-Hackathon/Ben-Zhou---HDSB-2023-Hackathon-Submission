@@ -1,4 +1,4 @@
-export interface Task {
+export interface Card {
     title: string;
     dir: string;
     description: string;

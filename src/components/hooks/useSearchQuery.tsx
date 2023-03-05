@@ -1,24 +1,24 @@
 import { useEffect, useState } from "react";
-import { Task } from "../../interfaces";
+import { Card } from "../../interfaces";
 import { useAppSelector } from "../../store/hooks";
 
 const useSearchQuery = (searchQuery: string) => {
-  const tasks = useAppSelector((state) => state.tasks.tasks);
+  const cards = useAppSelector((state) => state.cards.cards);
 
-  const [matchedTasks, setMatchedTasks] = useState<Task[]>([]);
+  const [matchedCards, setMatchedCards] = useState<Card[]>([]);
 
   useEffect(() => {
-    const filteredTasks = tasks.filter((task: Task) => {
-      return task.title.toLowerCase().includes(searchQuery.toLowerCase());
+    const filteredCards = cards.filter((card: Card) => {
+      return card.title.toLowerCase().includes(searchQuery.toLowerCase());
     });
     if (searchQuery.trim().length) {
-      setMatchedTasks(filteredTasks);
+      setMatchedCards(filteredCards);
     } else {
-      setMatchedTasks([]);
+      setMatchedCards([]);
     }
-  }, [searchQuery, tasks]);
+  }, [searchQuery, cards]);
 
-  return matchedTasks;
+  return matchedCards;
 };
 
 export default useSearchQuery;

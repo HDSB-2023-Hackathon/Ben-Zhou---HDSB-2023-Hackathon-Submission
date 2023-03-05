@@ -1,12 +1,12 @@
 import React from "react";
-import { Task } from "../../../interfaces";
-import BtnEditTask from "./BtnEditTask";
+import { Card } from "../../../interfaces";
+import BtnEditCard from "./BtnEditCard";
 import BtnMarkAsImportant from "./BtnMarkAsImportant";
-import BtnDeleteTask from "./BtnDeleteTask";
+import BtnDeleteCard from "./BtnDeleteCard";
 import BtnToggleCompleted from "./BtnToggleCompleted";
 
-const ActionsTaskItem: React.FC<{ task: Task; isListInView1: boolean }> = ({
-  task,
+const ActionsCardItem: React.FC<{ card: Card; isListInView1: boolean }> = ({
+  card,
   isListInView1,
 }) => {
   return (
@@ -17,16 +17,16 @@ const ActionsTaskItem: React.FC<{ task: Task; isListInView1: boolean }> = ({
         }`}
       >
         <BtnToggleCompleted
-          taskCompleted={task.completed}
-          taskId={task.id}
+          cardCompleted={card.completed}
+          cardId={card.id}
           isListInView1={isListInView1}
         />
-        <BtnMarkAsImportant taskId={task.id} taskImportant={task.important} />
-        <BtnDeleteTask taskId={task.id} />
-        <BtnEditTask task={task} />
+        <BtnMarkAsImportant cardId={card.id} cardImportant={card.important} />
+        <BtnDeleteCard cardId={card.id} />
+        <BtnEditCard card={card} />
       </div>
     </>
   );
 };
 
-export default ActionsTaskItem;
+export default ActionsCardItem;

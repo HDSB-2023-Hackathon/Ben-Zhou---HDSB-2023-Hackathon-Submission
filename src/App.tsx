@@ -2,12 +2,12 @@ import React from "react";
 import AccountData from "./components/AccountSection/AccountData";
 import Footer from "./components/Footer";
 import Menu from "./components/Menu/Menu";
-import TasksSection from "./components/TasksSection/TasksSection";
-import ModalCreateTask from "./components/Utilities/ModalTask";
-import { Task } from "./interfaces";
+import CardsSection from "./components/CardsSection/CardsSection";
+import ModalCreateCard from "./components/Utilities/ModalCard";
+import { Card } from "./interfaces";
 import { useAppDispatch, useAppSelector } from "./store/hooks";
 import { modalActions } from "./store/Modal.store";
-import { tasksActions } from "./store/Tasks.store";
+import { cardsActions } from "./store/Cards.store";
 import { RootState } from "./store";
 
 const App: React.FC = () => {
@@ -15,25 +15,25 @@ const App: React.FC = () => {
 
     const dispatch = useAppDispatch();
 
-    const closeModalCreateTask = () => {
-        dispatch(modalActions.closeModalCreateTask());
+    const closeModalCreateCard = () => {
+        dispatch(modalActions.closeModalCreateCard());
     };
 
-    const createNewTaskHandler = (task: Task) => {
-        dispatch(tasksActions.addNewTask(task));
+    const createNewCardHandler = (card: Card) => {
+        dispatch(cardsActions.addNewCard(card));
     };
 
     return (
         <div className="bg-slate-200 min-h-screen text-slate-600 dark:bg-slate-900 dark:text-slate-400 xl:text-base sm:text-sm text-xs">
-            {modal.modalCreateTaskOpen && (
-                <ModalCreateTask
-                    onClose={closeModalCreateTask}
-                    nameForm="Add a task"
-                    onConfirm={createNewTaskHandler}
+            {modal.modalCreateCardOpen && (
+                <ModalCreateCard
+                    onClose={closeModalCreateCard}
+                    nameForm="Add a card"
+                    onConfirm={createNewCardHandler}
                 />
             )}
             <Menu />
-            <TasksSection />
+            <CardsSection />
             <Footer />
             <AccountData />
         </div>

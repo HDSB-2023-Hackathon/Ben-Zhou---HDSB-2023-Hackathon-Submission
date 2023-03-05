@@ -1,18 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    modalCreateTaskOpen: false,
+    modalCreateCardOpen: false,
 };
 
 const modalSlice = createSlice({
     name: "modal",
     initialState: initialState,
     reducers: {
-        openModalCreateTask(state) {
-            state.modalCreateTaskOpen = true;
+        openModalCreateCard(state) {
+            state.modalCreateCardOpen = true;
         },
-        closeModalCreateTask(state) {
-            state.modalCreateTaskOpen = false;
+        closeModalCreateCard(state) {
+            state.modalCreateCardOpen = false;
         },
     },
 });

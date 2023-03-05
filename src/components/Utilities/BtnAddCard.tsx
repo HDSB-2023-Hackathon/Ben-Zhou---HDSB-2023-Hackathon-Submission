@@ -2,19 +2,19 @@ import React from "react";
 import { useAppDispatch } from "../../store/hooks";
 import { modalActions } from "../../store/Modal.store";
 
-const BtnAddTask: React.FC<{ className?: string }> = ({ className }) => {
+const BtnAddCard: React.FC<{ className?: string }> = ({ className }) => {
   const dispatch = useAppDispatch();
 
   const onOpenModal = () => {
-    dispatch(modalActions.openModalCreateTask());
+    dispatch(modalActions.openModalCreateCard());
   };
   return (
     <>
       <button className={`btn  ${className}`} onClick={onOpenModal}>
-        Add new task
+        Add new card
       </button>
     </>
   );
 };
 
-export default BtnAddTask;
+export default BtnAddCard;

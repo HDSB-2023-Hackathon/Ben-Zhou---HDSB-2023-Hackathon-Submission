@@ -4,10 +4,10 @@ import { useAppSelector } from "../../store/hooks";
 import useDescriptionTitle from "../hooks/useDescriptionTitle";
 
 const Home: React.FC = () => {
-  const tasks = useAppSelector((state) => state.tasks.tasks);
+  const cards = useAppSelector((state) => state.cards.cards);
 
-  useDescriptionTitle("Organize your tasks", "All tasks");
-  return <LayoutRoutes title="All tasks" tasks={tasks}></LayoutRoutes>;
+  useDescriptionTitle("Organize your cards", "All cards");
+  return <LayoutRoutes title="Overview" cards={cards}></LayoutRoutes>;
 };
 
 export default Home;

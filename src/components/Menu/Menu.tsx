@@ -1,8 +1,8 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { menusActions } from "../../store/Menu.store";
-import BtnAddTask from "../Utilities/BtnAddTask";
-import Directories from "./Directories/Directories";
+import BtnAddCard from "../Utilities/BtnAddCard";
+import Applications from "./Applications/Applications";
 import LayoutMenus from "../Utilities/LayoutMenus";
 import { RootState } from "../../store";
 
@@ -26,9 +26,9 @@ const Menu: React.FC = () => {
                 <h1 className="font-bold uppercase text-center mt-8 text-lg tracking-wide hidden xl:block">
                     UniPlanner
                 </h1>
-                <BtnAddTask className="my-8 mx-4" />
+                <BtnAddCard className="my-8 mx-4" />
                 <hr className="rounded"></hr>
-                <Directories classActive={classLinkActive} />
+                <Applications classActive={classLinkActive} />
             </header>
         </LayoutMenus>
     );

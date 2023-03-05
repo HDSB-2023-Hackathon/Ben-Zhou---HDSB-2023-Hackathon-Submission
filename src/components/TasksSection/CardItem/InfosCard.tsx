@@ -1,8 +1,8 @@
 import React from "react";
-import { Task } from "../../../interfaces";
+import { Card } from "../../../interfaces";
 
-const InfosTask: React.FC<{ task: Task; isListInView1: boolean }> = ({
-    task,
+const InfosCard: React.FC<{ card: Card; isListInView1: boolean }> = ({
+    card,
     isListInView1,
 }) => {
 
@@ -14,19 +14,19 @@ const InfosTask: React.FC<{ task: Task; isListInView1: boolean }> = ({
                 }`}
             >
                 <span className="block font-medium dark:text-slate-200">
-                    {task.title}
+                    {card.title}
                 </span>
             </div>
             <p
-                title={task.description}
+                title={card.description}
                 className={`description mb-2 text-slate-500 dark:text-slate-500 ${
                     isListInView1 ? "line-clamp-2 sm:line-clamp-1" : "line-clamp-3"
                 }`}
             >
-                {task.description}
+                {card.description}
             </p>
         </div>
     );
 };
 
-export default InfosTask;
+export default InfosCard;

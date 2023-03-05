@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { useAppDispatch } from "../../../store/hooks";
-import { tasksActions } from "../../../store/Tasks.store";
+import { cardsActions } from "../../../store/Cards.store";
 import { ReactComponent as Trash } from "../../../assets/trash.svg";
 import { ReactComponent as Edit } from "../../../assets/edit.svg";
 import ModalConfirm from "../../Utilities/ModalConfirm";
-import ModalDirectory from "../../Utilities/ModalDirectory";
+import ModalApplication from "../../Utilities/ModalApplication";
 
-const ItemDirectory: React.FC<{ dir: string; classActive: string }> = ({
+const ItemApplication: React.FC<{ dir: string; classActive: string }> = ({
     dir,
     classActive,
 }) => {
@@ -19,17 +19,17 @@ const ItemDirectory: React.FC<{ dir: string; classActive: string }> = ({
     const [modalIsShown, setModalIsShown] = useState<boolean>(false);
     const [modalDirIsShown, setModalDirIsShown] = useState<boolean>(false);
 
-    const closeModalDirectoryHandler = () => {
+    const closeModalApplicationHandler = () => {
         setModalDirIsShown(false);
     };
 
-    const deleteDirectoryHandler = () => {
-        dispatch(tasksActions.deleteDirectory(dir));
+    const deleteApplicationHandler = () => {
+        dispatch(cardsActions.deleteApplication(dir));
     };
 
     const confirmEditDirNameHandler = (dirName: string) => {
         dispatch(
-            tasksActions.editDirectoryName({
+            cardsActions.editApplicationName({
                 previousDirName: dir,
                 newDirName: dirName,
             })
@@ -39,8 +39,8 @@ const ItemDirectory: React.FC<{ dir: string; classActive: string }> = ({
     return (
         <>
             {modalDirIsShown && (
-                <ModalDirectory
-                    onClose={closeModalDirectoryHandler}
+                <ModalApplication
+                    onClose={closeModalApplicationHandler}
                     onConfirm={confirmEditDirNameHandler}
                     dirName={dir}
                     title="Edit University"
@@ -50,17 +50,17 @@ const ItemDirectory: React.FC<{ dir: string; classActive: string }> = ({
             {modalIsShown && (
                 <ModalConfirm
                     onClose={() => setModalIsShown(false)}
-                    onConfirm={deleteDirectoryHandler}
+                    onConfirm={deleteApplicationHandler}
                     text="This application and all its data will be deleted."
                 />
             )}
             <li
-                className={`flex items-center pr-4 pl-9 py-2 itemDirectory ${
-                    currentPath === "/dir/" + dir ? classActive : ""
+                className={`flex items-center pr-4 pl-9 py-2 itemApplication ${
+                    currentPath === "/application/" + dir ? classActive : ""
                 }`}
             >
                 <NavLink
-                    to={`/dir/${dir}`}
+                    to={`/application/${dir}`}
                     title={dir}
                     className="hover:text-rose-600 dark:hover:text-slate-200 transition text-ellipsis whitespace-nowrap overflow-hidden max-w-[18rem]"
                 >
@@ -88,4 +88,4 @@ const ItemDirectory: React.FC<{ dir: string; classActive: string }> = ({
     );
 };
 
-export default ItemDirectory;
+export default ItemApplication;

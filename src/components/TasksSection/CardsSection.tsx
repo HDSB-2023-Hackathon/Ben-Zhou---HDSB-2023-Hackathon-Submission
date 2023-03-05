@@ -1,23 +1,23 @@
 import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import Directory from "../Routes/Directory";
+import Application from "../Routes/Application";
 import Home from "../Routes/Home";
-import TaskOnly from "../Routes/TaskOnly";
+import CardOnly from "../Routes/CardOnly";
 
-import HeaderTasks from "./HeaderTasks";
+import HeaderCards from "./HeaderCards";
 
-const TasksSection: React.FC = () => {
+const CardsSection: React.FC = () => {
   return (
     <main className=" pt-5 pb-8 sm:pb-16 px-3 md:px-8 md:w-full xl:w-8/12 m-auto min-h-screen">
-      <HeaderTasks />
+      <HeaderCards />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/dir/:dir" element={<Directory />} />
-        <Route path="/task/:taskId" element={<TaskOnly />} />
+        <Route path="/application/:dir" element={<Application />} />
+        <Route path="/card/:cardId" element={<CardOnly />} />
         <Route path="*" element={<Navigate to="" />} />
       </Routes>
     </main>
   );
 };
 
-export default TasksSection;
+export default CardsSection;
