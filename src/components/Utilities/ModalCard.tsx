@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { Card } from "../../interfaces";
 import { useAppSelector } from "../../store/hooks";
 import Modal from "./Modal";
+import Questions from "./questions.json";
 
 const InputCheckbox: React.FC<{
     label: string;
@@ -26,6 +27,11 @@ const InputCheckbox: React.FC<{
     );
 };
 
+const randomQuestion = () => {
+    const random = Math.floor(Math.random() * Questions.length);
+    return Questions[random];
+};
+
 const ModalCreateCard: React.FC<{
     onClose: () => void;
     card?: Card;
@@ -45,6 +51,13 @@ const ModalCreateCard: React.FC<{
         month = +("0" + month);
     }
 
+    const [type, setType] = useState<string>(() => {
+        if (card) {
+            return card.type;
+        }
+        return "Other";
+    });
+
     const [description, setDescription] = useState<string>(() => {
         if (card) {
             return card.description;
@@ -55,7 +68,7 @@ const ModalCreateCard: React.FC<{
         if (card) {
             return card.title;
         }
-        return "";
+        return randomQuestion().question;
     });
     const isTitleValid = useRef<Boolean>(false);
 
@@ -94,6 +107,7 @@ const ModalCreateCard: React.FC<{
 
         if (isTitleValid.current) {
             const newCard: Card = {
+                type: type,
                 title: title,
                 app: selectedApplication,
                 description: description,
@@ -112,28 +126,32 @@ const ModalCreateCard: React.FC<{
                 className="flex flex-col stylesInputsField"
                 onSubmit={addNewCardHandler}
             >
-                {/* <label>
+                <label>
                     Card Type
-                    <select className="block w-full">
-                        <option value="grades" className="bg-slate-100 dark:bg-slate-800">
+                    <select 
+                        className="block w-full"
+                        onChange={({ target }) => setType(target.value)}
+                        value={type}
+                    >
+                        <option value="Grade" className="bg-slate-100 dark:bg-slate-800">
                             Grade
                         </option>
-                        <option value="applicationQuestion" className="bg-slate-100 dark:bg-slate-800">
+                        <option value="Application Question" className="bg-slate-100 dark:bg-slate-800">
                             Application Question
                         </option>
-                        <option value="extraCurricular" className="bg-slate-100 dark:bg-slate-800">
+                        <option value="Extra Curricular" className="bg-slate-100 dark:bg-slate-800">
                             Extra Curricular
                         </option>
-                        <option value="other" className="bg-slate-100 dark:bg-slate-800">
+                        <option value="Other" className="bg-slate-100 dark:bg-slate-800">
                             Other
                         </option>
                     </select>
-                </label> */}
+                </label>
                 <label>
                     Title
                     <input
                         type="text"
-                        placeholder="e.g, study for the test"
+                        placeholder="Card Title"
                         required
                         value={title}
                         onChange={({ target }) => setTitle(target.value)}
@@ -143,7 +161,7 @@ const ModalCreateCard: React.FC<{
                 <label>
                     Description (optional)
                     <textarea
-                        placeholder="e.g, study for the test"
+                        placeholder="A Description"
                         className="w-full"
                         value={description}
                         onChange={({ target }) => setDescription(target.value)}

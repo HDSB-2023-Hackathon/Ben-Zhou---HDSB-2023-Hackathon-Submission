@@ -1,4 +1,5 @@
 export interface Card {
+    type: string;
     title: string;
     app: string;
     description: string;
