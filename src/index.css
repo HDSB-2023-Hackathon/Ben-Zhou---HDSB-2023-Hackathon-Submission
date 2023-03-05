@@ -16,7 +16,7 @@
 
 
 @layer components {
-	.cardsList > li:first-of-type article {
+	/* .cardsList > li:first-of-type article {
 		@apply bg-violet-600 text-slate-100 dark:bg-violet-800;
 	}
 	.cardsList > li:first-of-type article .description {
@@ -24,7 +24,7 @@
 	}
 	.cardsList > li:first-of-type article > div {
 		@apply border-violet-500 dark:border-violet-700;
-	}
+	} */
 	.listView1 article {
 		@apply h-40;
 	}

@@ -22,7 +22,7 @@ const DeleteCards: React.FC = () => {
                 />
             )}
             <button
-                className="mt-auto text-left pt-4 hover:text-rose-600 dark:hover:text-slate-200 transition"
+                className="mt-auto text-left pt-4 hover:text-rose-600 dark:hover:text-slate-200 transition self-center"
                 onClick={() => setIsModalShown(true)}
             >
                 Delete All Data

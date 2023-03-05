@@ -68,9 +68,9 @@ const ModalCreateCard: React.FC<{
 
     const [selectedColor, setSelectedColor] = useState<string>(() => {
         if (card) {
-            return card.color;
+            return card.color !== "gray" ? `bg-${card.color}-300` : "bg-grey-500";
         }
-        return "bg-slate-300";
+        return "bg-black";
     });
 
     const [isCompleted, setIsCompleted] = useState<boolean>(() => {

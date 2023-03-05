@@ -10,7 +10,7 @@ const BtnAddCard: React.FC<{ className?: string }> = ({ className }) => {
     };
     return (
         <>
-            <button className={`btn  ${className}`} onClick={onOpenModal}>
+            <button className={`btn ${className}`} onClick={onOpenModal}>
                 Add New Card
             </button>
         </>

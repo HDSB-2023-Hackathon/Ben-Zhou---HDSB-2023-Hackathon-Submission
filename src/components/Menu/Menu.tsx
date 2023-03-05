@@ -26,7 +26,7 @@ const Menu: React.FC = () => {
                 <h1 className="font-bold uppercase text-center mt-8 text-lg tracking-wide hidden xl:block">
                     UniPlanner
                 </h1>
-                <BtnAddCard className="my-8 mx-4 bg-cyan-400" />
+                <BtnAddCard className="my-8 mx-4" />
                 <hr className="rounded"></hr>
                 <Applications classActive={classLinkActive} />
             </header>

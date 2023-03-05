@@ -19,7 +19,7 @@ const CardItem: React.FC<{ isListInView1: boolean; card: Card }> = ({
                     {card.app}
                 </Link>
                 <article
-                    className={`bg-slate-100 rounded-lg p-3 sm:p-4 flex text-left transition hover:shadow-lg hover:shadow-slate-300 dark:bg-slate-800 dark:hover:shadow-transparent ${
+                    className={`${card.color} rounded-lg p-3 sm:p-4 flex text-left transition hover:shadow-lg hover:shadow-slate-300 dark:${card.color} dark:hover:shadow-transparent ${
                         isListInView1 ? "flex-row sm:h-32" : "flex-col h-52 sm:h-64"
                     }`}
                 >
