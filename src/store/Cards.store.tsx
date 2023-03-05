@@ -14,6 +14,7 @@ const defaultCards: Card[] = [
         description: "This is the description for this card",
         app: "Grades",
         completed: true,
+        color: "bg-red-500",
         id: "g1",
     },
     {
@@ -22,6 +23,7 @@ const defaultCards: Card[] = [
         description: "This is the description for this card",
         app: "Grades",
         completed: true,
+        color: "bg-blue-500",
         id: "g2",
     },
     {
@@ -30,6 +32,7 @@ const defaultCards: Card[] = [
         description: "This is the description for this card",
         app: "Grades",
         completed: false,
+        color: "bg-green-500",
         id: "g3",
     },
     {
@@ -38,6 +41,7 @@ const defaultCards: Card[] = [
         description: "This is the description for this card",
         app: "Grades",
         completed: true,
+        color: "bg-yellow-500",
         id: "g1",
     },
     {
@@ -46,6 +50,7 @@ const defaultCards: Card[] = [
         description: "This is the description for this card",
         app: "Grades",
         completed: true,
+        color: "bg-purple-500",
         id: "g2",
     },
     {
@@ -54,6 +59,7 @@ const defaultCards: Card[] = [
         description: "This is the description for this card",
         app: "Grades",
         completed: false,
+        color: "bg-pink-500",
         id: "g3",
     },
 ];

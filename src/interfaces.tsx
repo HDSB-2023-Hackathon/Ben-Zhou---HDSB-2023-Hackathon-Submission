@@ -4,5 +4,6 @@ export interface Card {
     description: string;
     completed: boolean;
     important: boolean;
+    color: string;
     id: string;
 }

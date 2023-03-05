@@ -66,6 +66,13 @@ const ModalCreateCard: React.FC<{
         return false;
     });
 
+    const [selectedColor, setSelectedColor] = useState<string>(() => {
+        if (card) {
+            return card.color;
+        }
+        return "bg-slate-300";
+    });
+
     const [isCompleted, setIsCompleted] = useState<boolean>(() => {
         if (card) {
             return card.completed;
@@ -92,6 +99,7 @@ const ModalCreateCard: React.FC<{
                 description: description,
                 completed: isCompleted,
                 important: isImportant,
+                color: selectedColor,
                 id: card?.id ? card.id : Date.now().toString(),
             };
             onConfirm(newCard);
@@ -157,6 +165,36 @@ const ModalCreateCard: React.FC<{
                                 {app}
                             </option>
                         ))}
+                    </select>
+                </label>
+                <label>
+                    Color
+                    <select 
+                        className="block w-full"
+                        value={selectedColor}
+                        onChange={({ target }) => setSelectedColor(target.value)}
+                    >
+                        <option value="red" className="text-rose-500">
+                            Red
+                        </option>
+                        <option value="blue" className="text-blue-500">
+                            Blue
+                        </option>
+                        <option value="green" className="text-green-500">
+                            Green
+                        </option>
+                        <option value="yellow" className="text-yellow-500">
+                            Yellow
+                        </option>
+                        <option value="purple" className="text-purple-500">
+                            Purple
+                        </option>
+                        <option value="pink" className="text-pink-500">
+                            Pink
+                        </option>
+                        <option value="gray" className="text-slate-300">
+                            Gray
+                        </option>
                     </select>
                 </label>
                 <InputCheckbox
