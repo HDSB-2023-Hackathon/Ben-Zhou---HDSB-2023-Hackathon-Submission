@@ -5,71 +5,56 @@ import {
     MiddlewareAPI,
     PayloadAction,
 } from "@reduxjs/toolkit";
-import { Card, Grade } from "../interfaces";
+import { Card } from "../interfaces";
 
 const defaultCards: Card[] = [
     {
-        title: "Card 1",
+        title: "English",
         important: false,
         description: "This is the description for this card",
         app: "Grades",
         completed: true,
-        id: "t1",
+        id: "g1",
     },
     {
-        title: "Card 2",
+        title: "Advanced Functions",
         important: true,
         description: "This is the description for this card",
         app: "Grades",
         completed: true,
-        id: "t2",
+        id: "g2",
     },
     {
-        title: "Card 3",
+        title: "Physics",
         important: false,
         description: "This is the description for this card",
         app: "Grades",
         completed: false,
-        id: "t3",
+        id: "g3",
     },
-];
-
-const defaultGrades: Grade[] = [
     {
-        course: "English",
-        grade: 80,
+        title: "Chemistry",
+        important: false,
+        description: "This is the description for this card",
+        app: "Grades",
         completed: true,
         id: "g1",
     },
     {
-        course: "Advanced Functions",
-        grade: 80,
+        title: "Biology",
+        important: true,
+        description: "This is the description for this card",
+        app: "Grades",
         completed: true,
-        id: "g1",
+        id: "g2",
     },
     {
-        course: "Physics",
-        grade: 80,
-        completed: true,
-        id: "g1",
-    },
-    {
-        course: "Chemistry",
-        grade: 80,
-        completed: true,
-        id: "g1",
-    },
-    {
-        course: "Biology",
-        grade: 80,
-        completed: true,
-        id: "g1",
-    },
-    {
-        course: "French",
-        grade: 80,
-        completed: true,
-        id: "g1",
+        title: "French",
+        important: false,
+        description: "This is the description for this card",
+        app: "Grades",
+        completed: false,
+        id: "g3",
     },
 ];
 

@@ -53,7 +53,7 @@ const ModalApplication: React.FC<{
                         }
                     />
                     <select
-                        className="inputStyles block w-full"
+                        className="inputStyles block w-full mv-2"
                         onChange={({ target }) => setNewDirName(target.value)}
                     >
                         <option value="Select an University">Or Select a University</option>
